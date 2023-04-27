@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\IngatlanController;
+use App\Http\Controllers\KategoriaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,5 +22,17 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
+
+
+
+Route::get('api/kategoriak', [KategoriaController::class, "index"]);
+Route::get('api/kategoriak/{id}', [KategoriaController::class, "show"]);
+
+Route::get('api/ingatlanok', [IngatlanController::class, "index"]);
+Route::get('api/ingatlanok/full', [IngatlanController::class, "indexFull"]);
+Route::get('api/ingatlanok/{id}', [IngatlanController::class, "show"]);
+Route::post('api/ingatlanok', [IngatlanController::class, "store"]);
+Route::delete('api/ingatlanok/{id}', [IngatlanController::class, "destroy"]);
+
 
 require __DIR__.'/auth.php';
