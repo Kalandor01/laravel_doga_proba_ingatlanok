@@ -25,14 +25,18 @@ Route::get('/dashboard', function () {
 
 
 
-Route::get('api/kategoriak', [KategoriaController::class, "index"]);
-Route::get('api/kategoriak/{id}', [KategoriaController::class, "show"]);
+Route::get('/api/kategoriak', [KategoriaController::class, "index"]);
+Route::get('/api/kategoriak/{id}', [KategoriaController::class, "show"]);
 
-Route::get('api/ingatlanok', [IngatlanController::class, "index"]);
-Route::get('api/ingatlanok/full', [IngatlanController::class, "indexFull"]);
-Route::get('api/ingatlanok/{id}', [IngatlanController::class, "show"]);
-Route::post('api/ingatlanok', [IngatlanController::class, "store"]);
-Route::delete('api/ingatlanok/{id}', [IngatlanController::class, "destroy"]);
+Route::get('/api/ingatlanok', [IngatlanController::class, "index"]);
+Route::get('/api/ingatlanok/full', [IngatlanController::class, "indexFull"]);
+Route::get('/api/ingatlanok/{id}', [IngatlanController::class, "show"]);
+Route::post('/api/ingatlanok', [IngatlanController::class, "store"]);
+Route::delete('/api/ingatlanok/{id}', [IngatlanController::class, "destroy"]);
+
+
+Route::get('/ingatlanok', [IngatlanController::class, "listView"]);
+Route::get('/ingatlanok/new', [IngatlanController::class, "newView"]);
 
 
 require __DIR__.'/auth.php';
