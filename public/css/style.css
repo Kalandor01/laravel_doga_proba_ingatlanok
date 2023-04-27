@@ -2,5 +2,27 @@ html {
     margin: auto;
     max-width: 1500px;
     width: 80%;
+    background-color: bisque;
+    padding: 5px;
 }
 
+.ingatlan {
+    margin: auto;
+    background-color: burlywood;
+    padding: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.ingatlan>img {
+    width: 100%;
+    max-width: 500px;
+}
+
+th, td {
+    text-align: center;
+}
+
+formDiv {
+    margin: auto;
+}
